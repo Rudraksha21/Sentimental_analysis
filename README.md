@@ -30,7 +30,7 @@ This project extracts audio from a video file, transcribes the audio to text, an
    git clone https://github.com/your-username/video-sentiment-analysis.git
    cd video-sentiment-analysis
 
-3../run_analysis.sh
+3../run_analysis.sh video1.mp4
 
 #Mathematica Example
 Transcribed Text: Hello, welcome to the video sentiment analysis.
