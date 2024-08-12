@@ -1,3 +1,4 @@
+import sys
 import subprocess
 from speech_recognition import Recognizer, AudioFile
 from textblob import TextBlob
@@ -44,8 +45,7 @@ def interpret_sentiment(polarity, subjectivity):
 
     return polarity_interpretation, subjectivity_interpretation
 
-def main():
-    video_path = 'video1.mp4'
+def main(video_path):
     audio_path = 'extracted_audio.wav'
 
     # Extract audio from video
@@ -65,5 +65,8 @@ def main():
     print(f"Subjectivity Interpretation: {subjectivity_interpretation}")
 
 if __name__ == '__main__':
-    main()
-    
+    if len(sys.argv) < 2:
+        print("Please provide a video file path as an argument.")
+        sys.exit(1)
+    video_path = sys.argv[1]
+    main(video_path)
